@@ -7,19 +7,16 @@ const ingredients = [
   'Condiments',
 ];
 
-const ingredientsList = document.createElement('ul')
+const ingredientsList = document.querySelector('#ingredients');
 
-const ingredientsArray = [];
+const array = [];
 
-  for (const ingredient of ingredients) {
+ingredients.map(ingredient => {
+  const element = document.createElement('li');
+  element.textContent = ingredient;
+  element.classList.add('item');
+  array.push(element);
+})
 
-    const listItem = document.createElement('li');
-    listItem.classList.add('item');
-    listItem.textContent = ingredient;
-    
-    ingredientsArray.push(listItem)
-    
-  }
-  
-  ingredientsList.append(...ingredientsArray)
-console.log(ingredientsList);
+ingredientsList.append(...array);
+console.log(ingredientsList)

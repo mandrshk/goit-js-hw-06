@@ -1,14 +1,12 @@
-const inputValue = document.getElementById('name-input');
-const userName = document.getElementById('name-output');
+const input = document.querySelector('#name-input');
+const span = document.querySelector('#name-output');
 
-inputValue.addEventListener('input', onInputFocus)
+input.addEventListener('input', onInputFocus);
 
-function onInputFocus(event) {
-    userName.textContent = event.currentTarget.value;
-    if (event.currentTarget.value != '') {
-       userName.textContent = event.currentTarget.value;  
+function onInputFocus (event) {
+    if (event.currentTarget.value != '' && event.currentTarget.value != ' ') {
+        span.textContent = event.currentTarget.value;
     } else {
-         userName.textContent = 'Anonymous';
-    
+         span.textContent = 'Anonymous';
     }
 }
